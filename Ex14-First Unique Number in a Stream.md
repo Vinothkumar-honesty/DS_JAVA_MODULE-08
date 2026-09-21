@@ -24,29 +24,45 @@ RegisterNumber:  212224040361
 
 import java.util.*;
 
-public class FirstUniqueTracker {
-    public static void main(String[] args) {
-        int[] stream = {4, 5, 4, 5, 3, 2, 1};
-        LinkedHashMap<Integer, Integer> map = new LinkedHashMap<>();
+public class FirstUniqueNumberStream {
 
-        for (int num : stream)
-            map.put(num, map.getOrDefault(num, 0) + 1);
-
-        System.out.println("Stream: " + Arrays.toString(stream));
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if (entry.getValue() == 1) {
-                System.out.println("First unique number: " + entry.getKey());
-                return;
+    public static void processStream(int n, Scanner sc) {
+        LinkedHashMap<Integer, Integer> freqMap = new LinkedHashMap<>();
+        for(int i=0; i<n; i++){
+            int current = sc.nextInt();
+            
+            freqMap.put(current, freqMap.getOrDefault(current, 0)+1);
+            
+            int fUniq = -1;
+            
+            for(Map.Entry<Integer, Integer> entry : freqMap.entrySet()){
+                if(entry.getValue() == 1){
+                    fUniq = entry.getKey();
+                    break;
+                }
+            }
+            
+            if(fUniq != -1){
+                System.out.println("First unique number: "+fUniq);
+            }else{
+                System.out.println("No unique number");
             }
         }
-        System.out.println("No unique number found.");
     }
-}  
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        processStream(n, sc);
+        sc.close();
+    }
+} 
 ```
 
 ## Output:
 
-<img width="318" height="71" alt="image" src="https://github.com/user-attachments/assets/cb4172ad-f4f2-4ca7-a537-75e7f8516c30" />
+<img width="686" height="507" alt="514691649-c8c28d2e-327d-4303-b3c5-80c1eeec6735" src="https://github.com/user-attachments/assets/a37a27aa-057c-4484-9c83-bd358320237e" />
+
 
 
 ## Result:

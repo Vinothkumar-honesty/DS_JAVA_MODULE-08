@@ -25,38 +25,35 @@ RegisterNumber:  212224040361
 import java.util.*;
 
 public class HashSetToArrayList {
+
+    public static ArrayList<Integer> convertToArrayList(HashSet<Integer> set) {
+        ArrayList<Integer> list = new ArrayList<>(set);
+        return list;
+    }
+
     public static void main(String[] args) {
-
-        // Create a HashSet of integers
-        HashSet<Integer> numberSet = new HashSet<>();
-
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter how many numbers you want to add: ");
         int n = sc.nextInt();
-
-        // Taking input from the user
-        System.out.println("Enter " + n + " distinct integers:");
+        HashSet<Integer> set = new HashSet<>();
         for (int i = 0; i < n; i++) {
-            numberSet.add(sc.nextInt());
+            int num = sc.nextInt();
+            set.add(num);
         }
 
-        // Convert HashSet to ArrayList
-        ArrayList<Integer> numberList = new ArrayList<>(numberSet);
-
-        // Display the ArrayList
-        System.out.println("\nArrayList contents:");
-        for (int num : numberList) {
-            System.out.println(num);
+        ArrayList<Integer> list = convertToArrayList(set);
+        System.out.println("ArrayList contents:");
+        for (int num : list) {
+            System.out.print(num + " ");
         }
-
         sc.close();
     }
 }
+    
 ```
 
 ## Output:
+<img width="524" height="550" alt="514689394-0a328278-4dfa-401b-b137-abc9458d737d" src="https://github.com/user-attachments/assets/671cccf1-fda7-4b1a-91d4-59ccb3596a29" />
 
-<img width="678" height="428" alt="image" src="https://github.com/user-attachments/assets/f2c1eea5-e2ae-4934-84bb-629e5c23b3a5" />
 
 
 ## Result:

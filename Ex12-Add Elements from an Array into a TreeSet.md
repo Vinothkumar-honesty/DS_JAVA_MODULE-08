@@ -19,23 +19,44 @@ Developed by: VINOTHKUMAR R
 RegisterNumber:  212224040361
 */
 
+
 import java.util.*;
 
 public class ArrayToTreeSet {
+
+    public static TreeSet<Integer> convertArrayToTreeSet(int[] arr) {
+        List<Integer> list = new ArrayList<>();
+        for(int x : arr){
+            list.add(x);
+        }
+        
+        TreeSet<Integer> treeSet = new TreeSet<>(list);
+        return treeSet;
+    }
+
     public static void main(String[] args) {
-        Integer[] arr = {50, 20, 40, 10, 30};
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
 
-        TreeSet<Integer> set = new TreeSet<>(Arrays.asList(arr));
+        TreeSet<Integer> treeSet = convertArrayToTreeSet(arr);
+        System.out.println("Elements in TreeSet:");
+        for (int num : treeSet) {
+            System.out.println(num);
+        }
 
-        System.out.println("Array elements: " + Arrays.toString(arr));
-        System.out.println("TreeSet elements (sorted): " + set);
+        sc.close();
     }
 }
 ```
 
 ## Output:
 
-<img width="446" height="65" alt="image" src="https://github.com/user-attachments/assets/42b2a190-23fa-4210-87b2-89a7e7458b27" />
+<img width="624" height="436" alt="514689589-869f72c0-2cfe-4e38-a11e-669968f0a796" src="https://github.com/user-attachments/assets/1799a46f-1024-4021-88ad-69e25aa23696" />
+
 
 
 ## Result:

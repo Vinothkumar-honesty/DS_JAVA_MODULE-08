@@ -17,20 +17,32 @@ Developed by: VINOTHKUMAR R
 RegisterNumber:  212224040361
 */
 
-import java.util.Arrays;
+import java.util.*;
 
-public class FillArray {
+public class FillArrayUsingArraysFill {
+
+    public static int[] fillArray(int size, int value) {
+        int[] arr = new int[size];
+        Arrays.fill(arr, value);
+        return arr;
+    }
+
     public static void main(String[] args) {
-        int[] arr = new int[10];
-        Arrays.fill(arr, 5);
-        System.out.println("Array after filling: " + Arrays.toString(arr));
+        Scanner sc = new Scanner(System.in);
+        int value = sc.nextInt();
+        int[] arr = fillArray(10, value);
+        System.out.println("Array elements:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        sc.close();
     }
 }
 ```
 
 ## Output:
 
-<img width="477" height="54" alt="image" src="https://github.com/user-attachments/assets/df1870c0-8949-4e78-9c6f-28cc4f6310d8" />
+<img width="706" height="176" alt="514690743-3b0bedfe-2c88-4b2f-840e-e2733f1f817d" src="https://github.com/user-attachments/assets/dfd8b809-b398-472d-8f0e-5c6ba665623f" />
 
 
 

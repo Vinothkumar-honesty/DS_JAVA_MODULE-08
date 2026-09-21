@@ -21,28 +21,39 @@ RegisterNumber:  212224040361
 
 import java.util.*;
 
-public class TreeMapValueCheck {
+public class TreeMapValueExistenceCheck {
+
+    public static void checkValue(TreeMap<Integer, String> map, String searchValue) {
+        if(map.containsValue(searchValue)){
+            System.out.println("Value \""+searchValue+"\" exists in the TreeMap.");
+        }else{
+            System.out.println("Value \""+searchValue+"\" does not exist in the TreeMap.");
+        }
+    }
+
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         TreeMap<Integer, String> map = new TreeMap<>();
-        map.put(1, "Apple");
-        map.put(2, "Banana");
-        map.put(3, "Cherry");
-        map.put(4, "Mango");
 
-        System.out.println("TreeMap: " + map);
-        String valueToCheck = "Banana";
+        int n = sc.nextInt();
 
-        if (map.containsValue(valueToCheck))
-            System.out.println("The value '" + valueToCheck + "' exists in the TreeMap.");
-        else
-            System.out.println("The value '" + valueToCheck + "' does not exist in the TreeMap.");
+        for (int i = 0; i < n; i++) {
+            int key = sc.nextInt();
+            sc.nextLine();  
+            String value = sc.nextLine();
+            map.put(key, value);
+        }
+        String searchValue = sc.nextLine();
+
+        checkValue(map, searchValue);
+        sc.close();
     }
 }
 ```
 
 ## Output:
 
-<img width="522" height="72" alt="image" src="https://github.com/user-attachments/assets/40c0a480-8eda-4644-9b37-82529bc7386b" />
+<img width="972" height="668" alt="514692129-4f28964f-e8ad-4737-ac84-18a702035340" src="https://github.com/user-attachments/assets/c064e4ab-36c4-44d7-be54-4684a915acf5" />
 
 
 ## Result:
